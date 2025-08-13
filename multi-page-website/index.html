@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Multi-Page Game Website</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <button onclick="goToPage(1)">Home</button>
+    <button onclick="goToPage(2)">Snake Game</button>
+    <button onclick="goToPage(3)">Shooting Game</button>
+    <button onclick="goToPage(4)">Stick Hero</button>
+  </nav>
+
+  <!-- Page 1: Home -->
+  <div id="page1" class="page active">
+    <h1>Welcome to Adam's Game Hub</h1>
+    <p>Explore exciting games and test your skills!</p>
+    <div class="info-box">
+      <p>Play simple games and have fun!</p>
+    </div>
+    <button class="modern-btn" onclick="showtime()">Show Current Time</button>
+  </div>
+
+  <!-- Page 2: Snake Game -->
+  <div id="page2" class="page">
+    <h1>Snake Game</h1>
+    <canvas id="snakeCanvas" width="400" height="400"></canvas>
+    <div id="snakeScore">Score: 0</div>
+    <div id="snakeGameOverScreen">
+      <div id="snakeFinalScore"></div>
+      <button id="snakeRestartBtn">Restart</button>
+    </div>
+  </div>
+
+  <!-- Page 3: Shooting Game -->
+  <div id="page3" class="page">
+    <h1>Shooting Game</h1>
+    <div id="shootingScore">Score: 0</div>
+    <div id="shootingGameOverScreen">
+      <div id="shootingFinalScore"></div>
+      <button id="shootingRestartBtn">Restart</button>
+    </div>
+    <canvas id="shootingCanvas" width="480" height="640"></canvas>
+  </div>
+
+  <!-- Page 4: Stick Hero -->
+  <div id="page4" class="page">
+    <div class="container">
+      <div id="score"></div>
+      <canvas id="game"></canvas>
+      <div id="introduction">Hold down the mouse to stretch out a stick</div>
+      <div id="perfect">DOUBLE SCORE</div>
+      <button id="restart">RESTART</button>
+    </div>
+
+    <a id="youtube" href="https://youtu.be/eue3UdFvwPo" target="_top">
+      <span>See how this game was made</span>
+    </a>
+    <div id="youtube-card">
+      How to create a Stick Hero game with JavaScript and HTML Canvas
+    </div>
+
+    <div id="credit">
+      Game by
+      <a href="https://codepen.io/HunorMarton/pen/xxOMQKg" target="_blank">Hunor Márton Borbély</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="snake_game.js"></script>
+  <script src="shooting_game.js"></script>
+  <script src="stickhero_game.js"></script>
+</body>
+</html>
