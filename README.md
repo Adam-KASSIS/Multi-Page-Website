@@ -7,7 +7,7 @@ This project includes:
 - **Shooting Game**  
 - **Stick Hero Game**
 
-  The Stick Hero Game is not mine and was made by Hunor Márton Borbély and his Youtube Channel --> https://www.youtube.com/@HunorMartonBorbely
+  The Stick Hero Game is not mine and was made by Hunor Márton Borbély and his Youtube Channel is --> https://www.youtube.com/@HunorMartonBorbely
 
 ## Features
 
