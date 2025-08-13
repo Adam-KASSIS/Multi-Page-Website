@@ -195,7 +195,7 @@ Array.prototype.last = function () {
   function animate(timestamp) {
     if (!lastTimestamp) {
       lastTimestamp = timestamp;
-      window.requestAnimationFrame(animate);
+      
       return;
     }
   
@@ -608,5 +608,12 @@ function keyDownHandler(event) {
     resetGame();
     return;
   }
+}
+
+
+function animateWrapper(timestamp) {
+  if (!stickHeroRunning) return;
+  stickHeroAnimationId = requestAnimationFrame(animateWrapper);
+  animate(timestamp);
 }
 
