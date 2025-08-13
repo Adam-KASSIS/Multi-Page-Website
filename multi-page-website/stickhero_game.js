@@ -286,7 +286,7 @@ Array.prototype.last = function () {
     }
   
     draw();
-    window.requestAnimationFrame(animate);
+    /*window.requestAnimationFrame(animate);*/
   
     lastTimestamp = timestamp;
   }
@@ -523,3 +523,90 @@ Array.prototype.last = function () {
     return Math.sinus(x) * amplitude + sineBaseY;
   }
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let stickHeroAnimationId = null;
+let stickHeroRunning = false;
+
+function startStickHeroGame() {
+  if (stickHeroRunning) return;
+  stickHeroRunning = true;
+  resetGame();
+
+  // Add event listeners
+  window.addEventListener("mousedown", mouseDownHandler);
+  window.addEventListener("mouseup", mouseUpHandler);
+  window.addEventListener("keydown", keyDownHandler);
+
+  animateWrapper();
+}
+
+function stopStickHeroGame() {
+  stickHeroRunning = false;
+
+  // Remove event listeners
+  window.removeEventListener("mousedown", mouseDownHandler);
+  window.removeEventListener("mouseup", mouseUpHandler);
+  window.removeEventListener("keydown", keyDownHandler);
+
+  if (stickHeroAnimationId) {
+    cancelAnimationFrame(stickHeroAnimationId);
+    stickHeroAnimationId = null;
+  }
+}
+
+// Handlers for the events
+function mouseDownHandler(event) {
+  if (phase == "waiting") {
+    lastTimestamp = undefined;
+    introductionElement.style.opacity = 0;
+    phase = "stretching";
+    window.requestAnimationFrame(animateWrapper);
+  }
+}
+
+function mouseUpHandler(event) {
+  if (phase == "stretching") {
+    phase = "turning";
+  }
+}
+
+function keyDownHandler(event) {
+  if (event.key == " ") {
+    event.preventDefault();
+    resetGame();
+    return;
+  }
+}
+
